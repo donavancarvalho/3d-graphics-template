@@ -44,7 +44,14 @@ namespace SharedLib
         }
 
         // Render context initializing
-        // ...
+        glfwMakeContextCurrent(m_Handle);
+
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+        {
+            glfwDestroyWindow(m_Handle);
+            glfwTerminate();
+            DC_ASSERT(false, "Failed to initialize render context");
+        }
     }
 
     void Win32Window::PollEvents()

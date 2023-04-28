@@ -15,10 +15,10 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "")
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "")
 set(GLFW_INSTALL OFF CACHE BOOL "")
 
-include_directories(ThirdParty/glfw/include)
-
 add_subdirectory(ThirdParty/glfw)
 
+include_directories(ThirdParty/glfw/include)
+include_directories(ThirdParty/glad/include)
 include_directories(SharedLib/Source)
 
 add_subdirectory(SharedLib)
